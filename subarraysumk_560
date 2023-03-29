@@ -1,0 +1,22 @@
+//Leetcode problem 560
+
+// function to find number of subarrays with sum = k
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int count=0;
+        int n= nums.length;
+        
+        //Find sum of elements: Each iteration taking sum of i + each next element of array (j)
+        for (int i=0; i< n ; i++){
+        int total=0;
+            for (int j=i; j<n; j++){
+                total += nums[i];
+                
+                //If sum is equal to given k increment count
+                if (total==k)
+                count++;
+            }
+        }
+    return count;
+    }
+}
